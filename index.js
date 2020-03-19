@@ -13,7 +13,7 @@ fetch('https://api.artsy.net/api/tokens/xapp_token?client_id=83b52175d463d48945d
 .then(res => {
   xapp_token = res.token
   console.log(xapp_token)
-  var expiresAt = new Date(res.expires_in).getTime();
+  var expiresAt = new Date(res.expires_at).getTime()
   setTimeout(() => fetchAndCacheToken(), (expiresAt - 1000) - Date.now())
 })
 }
